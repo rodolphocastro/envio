@@ -30,3 +30,7 @@ subject.init();
 ```
 
 Check out the `/samples` folder for further samples!
+
+## 💭 Inspiration
+
+This module is heavily inspired by the handy `IConfiguration` from [.NET](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.iconfiguration?view=dotnet-plat-ext-3.1) which allows us to easily fetch configurations from the Environment, Files and a plethora of other providers!
