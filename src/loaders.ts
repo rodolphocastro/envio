@@ -6,7 +6,8 @@ const { get: getFromEnv } = Deno.env;
  * @param prefix A prefix to be used
  */
 export function fetchFromEnv(varName: string, prefix: string): string {
-  const result = getFromEnv(`${prefix}_${varName}`);
+  const expectedKey = prefix !== "" ? `${prefix}_${varName}` : varName;
+  const result = getFromEnv(expectedKey);
   return result ?? "";
 }
 

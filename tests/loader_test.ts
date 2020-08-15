@@ -101,15 +101,15 @@ Deno.test({
 });
 
 Deno.test({
-  name: 'Does not override not found values',
+  name: "Does not override not found values",
   fn: () => {
-    const initialValue = "aValue!!!"
+    const initialValue = "aValue!!!";
     class MySubject extends BaseFromEnvironment {
       myProperty = initialValue;
     }
     const subject = new MySubject();
-    subject.init("A_RANDOM_PREFIX_TO_ENSURE_NO_OVERLAP")
+    subject.init("A_RANDOM_PREFIX_TO_ENSURE_NO_OVERLAP");
     const result = subject.myProperty;
-    assertEquals(result, initialValue)
-  }
-})
+    assertEquals(result, initialValue);
+  },
+});
