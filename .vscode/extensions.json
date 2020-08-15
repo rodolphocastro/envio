@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "denoland.vscode-deno",
+    "EditorConfig.EditorConfig",
+    "streetsidesoftware.code-spell-checker",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "yzhang.markdown-all-in-one",
+    "usernamehw.errorlens"
+  ]
+}
