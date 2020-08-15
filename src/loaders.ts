@@ -14,7 +14,6 @@ export function fetchFromEnv(varName: string, prefix: string): string {
  * A class which properties can be pulled from the Environment.
  */
 export class BaseFromEnvironment {
-
   /**
    * Attempts to initialize all properties with values from the Environment.
    * @param prefix Prefix preceding all the keys in the Environment

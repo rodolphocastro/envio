@@ -84,18 +84,18 @@ Deno.test({
 });
 
 Deno.test({
-  name: 'Inits values from the Environment',
+  name: "Inits values from the Environment",
   fn: () => {
-    const initialValue = 'aProperty';
-    const expectedValue = 'expectedProperty'
+    const initialValue = "aProperty";
+    const expectedValue = "expectedProperty";
     class MySubject extends BaseFromEnvironment {
-      myProperty = initialValue
+      myProperty = initialValue;
     }
     const subject = new MySubject();
-    Deno.env.set('DENO_APP_myProperty', expectedValue)
-    subject.init('DENO_APP');
+    Deno.env.set("DENO_APP_myProperty", expectedValue);
+    subject.init("DENO_APP");
     const result = subject.myProperty;
-    assertNotEquals(result, initialValue)
-    assertEquals(result, expectedValue)
-  }
-})
+    assertNotEquals(result, initialValue);
+    assertEquals(result, expectedValue);
+  },
+});
