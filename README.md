@@ -2,6 +2,12 @@
 
 `Envio` is a simple module to help you map environmental variables into class' properties. It has zero external dependencies!
 
+---
+
+## 🚦 Build Status
+
+Current status for **master**(latest): ![Build and Test](https://github.com/rodolphocastro/envio/workflows/Build%20and%20Test/badge.svg)
+
 ## ⚡ Getting started
 
 Do get started with `envio` simply:
