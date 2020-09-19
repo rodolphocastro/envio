@@ -3,6 +3,7 @@ import {
   assertEquals,
   assertNotEquals,
   assertArrayContains,
+  dixtureFns,
 } from "./deps.ts";
 import { BaseFromEnvironment, fetchFromEnv } from "../src/loaders.ts";
 
@@ -31,7 +32,7 @@ Deno.test({
       /**
        * This should show up in the result!
        */
-      myValue = "pudding!";
+      myValue = dixtureFns.String();
 
       /**
        * Wrapper for our subject under test.
@@ -57,7 +58,7 @@ Deno.test({
   name: "Assigns values by Reflection",
   fn: () => {
     class MySubject extends BaseFromEnvironment {
-      myProperty = "";
+      myProperty = dixtureFns.String();
 
       methodUnderTest = (property: keyof MySubject, value: string) => {
         this.assignValueByReflection(property, value);
@@ -74,8 +75,8 @@ Deno.test({
   name: "Fetches values from env",
   fn: () => {
     const { prefix, value } = {
-      prefix: "my_test",
-      value: "aValueForTesting",
+      prefix: dixtureFns.String(),
+      value: dixtureFns.String(),
     };
     Deno.env.set(`${prefix}_value`, value);
     const result = fetchFromEnv("value", prefix);
@@ -86,8 +87,8 @@ Deno.test({
 Deno.test({
   name: "Inits values from the Environment",
   fn: () => {
-    const initialValue = "aProperty";
-    const expectedValue = "expectedProperty";
+    const initialValue = dixtureFns.String();
+    const expectedValue = dixtureFns.String();
     class MySubject extends BaseFromEnvironment {
       myProperty = initialValue;
     }
@@ -103,7 +104,7 @@ Deno.test({
 Deno.test({
   name: "Does not override not found values",
   fn: () => {
-    const initialValue = "aValue!!!";
+    const initialValue = dixtureFns.String();
     class MySubject extends BaseFromEnvironment {
       myProperty = initialValue;
     }
